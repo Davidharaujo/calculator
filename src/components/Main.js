@@ -75,24 +75,18 @@ export default class Main extends Component {
     soma = () => {
         this.setState({
             result: this.state.valor1 + this.state.valor2,
-            valor1:"",
-            valor2:""
         })
     }
 
     subtrai = () => {
         this.setState({
             result: this.state.valor1 - this.state.valor2,
-            valor1:"",
-            valor2:""
         })
     }
 
     multiplica = () => {
         this.setState({
             result: this.state.valor1 * this.state.valor2,
-            valor1:"",
-            valor2:""
         })
     }
 
