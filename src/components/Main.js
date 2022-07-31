@@ -86,7 +86,8 @@ export default class Main extends Component {
                 valor1: this.state.result,
                 sinal: event.target.innerHTML,
                 valor2:'',
-                result:''
+                result:'',
+                sinalIgual:''
             })
         }
     }
