@@ -21,7 +21,7 @@ const Caixaentrada = styled.div `
     display: flex;
     flex-flow: row wrap;
     width: 350px;
-    height: 450px;
+    height: 500px;
     border: solid;
     border-radius: 10px;
     background-color: #000;
@@ -51,6 +51,8 @@ const Visor = styled.div `
         border: none;
         border-radius: 5px;
         align-items: center;
+        padding: 10px;
+        margin-top: 10px;
 
         p {
             font-family: 'Calculator', sans-serif;
@@ -105,12 +107,12 @@ export default class Main extends Component {
             })
         }else if (this.state.sinal == "x") {
             this.setState ({
-                result: Number(this.state.valor1) * Number(this.state.valor2),
+                result: Number((this.state.valor1) * Number(this.state.valor2)).toFixed(3),
                 sinalIgual:'='
             })
         }else if (this.state.sinal == "÷") {
             this.setState ({
-                result: Number(this.state.valor1) / Number(this.state.valor2),
+                result: (Number(this.state.valor1) / Number(this.state.valor2)).toFixed(3),
                 sinalIgual:'='
             })
         }
@@ -167,9 +169,10 @@ export default class Main extends Component {
                     <button onClick={this.Number}>3</button>
                     <button onClick={this.Calc}>x</button>
                     <button onClick={this.Number}>0</button>
-                    <button onClick={this.Equal}>=</button>
+                    <button onClick={this.Number}>.</button>
                     <button onClick={this.Clear}>C</button>
                     <button onClick={this.Calc}>÷</button>
+                    <button onClick={this.Equal}>=</button>
                 </Caixaentrada>
             </Container>
         )
