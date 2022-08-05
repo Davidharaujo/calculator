@@ -74,7 +74,7 @@ export default class Main extends Component {
     }
 
     Calc = (event) => {
-        if (this.state.valor1 == "") {
+        if (this.state.valor1 == "" || this.state.sinal !== "") {
           this.setState({
             alerta:"Digite um valor"
           })
@@ -115,6 +115,10 @@ export default class Main extends Component {
                 result: (Number(this.state.valor1) / Number(this.state.valor2)).toFixed(3),
                 sinalIgual:'='
             })
+        } else if(this.state.sinalIgual !== '') {
+            this.setState({
+                alerta:"Digite um valor"
+              })
         }
     }
 
@@ -147,9 +151,9 @@ export default class Main extends Component {
         return (
             <Container>
                 <h2>Calculator</h2>
+                <span>{this.state.alerta}</span>
                 <Caixaentrada>
                     <Visor>
-                        <p>{this.state.alerta}</p>
                         <p>{this.state.valor1}</p>
                         <p>{this.state.sinal}</p>
                         <p>{this.state.valor2}</p>
